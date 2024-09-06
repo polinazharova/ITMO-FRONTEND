@@ -17,10 +17,15 @@
             </header>
                 <form action="...">
                     <nav>
-                        Год выпуска альбома:
-                        <label><input type="radio"> 2024</label>
-                        <label><input type="radio"> 2023</label>
-                        <label><input type="radio"> 2022</label>
+                        <fieldset>
+                            <legend>Год выпуска альбома:</legend>
+                            <input checked type="radio" id="2024 year" value="2024 year" name="album's year">
+                            <label for="2024 year">2024</label>
+                            <input type="radio" id="2023 year" value="2023 year" name="album's year">
+                            <label for="2023 year">2023</label>
+                            <input type="radio" id="2022 year" value="2022 year" name="album's year">
+                            <label for="2022 year">2022</label>
+                        </fieldset>
                     </nav>
                     <input type="text" name="dela" placeholder="Имя альбома или исполнителя" required="">
                     <button type="submit">Submit</button>
@@ -59,12 +64,6 @@
             </section>
             <section>
                 <h5>Кое-что еще...</h5>
-                Музыка бывает...
-                <ul>
-                    <li>Хорошей</li>
-                    <li>Плохой</li>
-                    <li>Рэпом</li>
-                </ul>
                 <pre>
                         _______       __
                         /   ------.   / ._`_
@@ -76,10 +75,10 @@
                         \       .---.    .
                             -----'     ~~''
                 </pre>
-        </section>
+            </section>
         </main>
         <footer>
-            <code>&gt;&gt;&gt;</code>Creator's <a target="_blank" href="https://vk.com/polinatzharova">VK</a>!
+            <code>&gt;&gt;&gt;</code>Creator's <a target="_blank" href="https://vk.com/polinatzharova">VK</a>
         </footer>
     </body>
 </html>
