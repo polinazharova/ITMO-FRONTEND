@@ -1,0 +1,152 @@
+
+/*BODY*/
+.body {
+    background-color: #ffefaf;
+}
+
+/*HEADER*/
+.main-header {
+    text-align: center;
+}
+.main-header__title {
+    margin: -20px 10px 0 0;
+    padding: 0px;
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 130px;
+    color: #FFB254;
+    text-shadow: 1px 1px #7d5e1a;    
+}
+.main-header__quote {
+    margin-top: -75px;
+    padding: 0px;
+    font-family: "Maven Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    color: #FFC13D;
+    text-shadow: 0.5px 0.5px rgba(125, 94, 26, 0.3);
+}
+
+/*MAIN*/
+/*NAVIGATION*/
+.main-navigation {
+    text-align: center;
+    width: 100%;
+    background-color: #fffce1;
+    border-radius: 7px;
+}
+.main-navigation__list-of-years {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 20px;
+}
+.main-navigation__year {
+    display: inline;
+    margin: 0 80px;
+}
+.main-navigation__year_disabled {
+    text-decoration: none;
+    color: #FFB254;
+    text-shadow: 1px 1px #7d5e1a;
+}
+.main-navigation__year_hover:hover {
+    text-decoration: none;
+    color: #FFB254;
+    text-shadow: 1px 1px #7d5e1a;
+    border: 0.5px outset #7d5e1a;
+}
+.main-navigation__year_active:active {
+    text-decoration: none;
+    color: #FFF03D;
+    text-shadow: 1px 1px #7d5e1a;
+}
+
+/*AD*/
+.ad__banner {
+    text-align: center;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+
+/*USER-INPUT-FORM*/
+.input-form__button {
+    color: #7d5e1a;
+}
+
+/*LIST-OF-ALBUMS*/
+.albums {
+    text-align: center;
+}
+.albums__list {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 25px;
+    color: #FFB254;
+    text-shadow: 1px 1px #7d5e1a;
+    text-transform: uppercase;
+}
+.albums__chosen-year {
+    margin-top: -27px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 15px;
+    color: #FFB254;
+    text-shadow: 1px 1px #7d5e1a;
+}
+.album-info {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #FFB254;
+}
+.album-cover-name_strong-text {
+    text-shadow: 1px 1px #7d5e1a;
+}
+.album-info__rating {
+    margin: 10px auto 25px auto;
+    width: 100px;
+    border: 3px dotted #7d5e1a;
+}
+.album-info__aside-info {
+    margin: -10px 0 10px 0;
+    font-family: "Maven Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #7d5e1a;
+}
+.album-cover-name__picture {
+    width: 250px;
+    background: #fffce1; 
+    border-radius: 7px; 
+    padding: 0.8%;
+}
+
+/*FOOTER*/
+.footer {
+    background-color: rgba(228, 205, 116, 0.3);
+}
+.footer__ASCII-guitar {
+    padding: auto auto;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #FFB254;
+    text-shadow: 1px 1px #ffffff;
+}
+.footer__info {
+    text-transform: uppercase;
+}
