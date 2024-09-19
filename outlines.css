@@ -1,12 +1,16 @@
 
 /*BODY*/
 .body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     background-color: #ffefaf;
 }
 
 /*HEADER*/
 .main-header {
     text-align: center;
+    text-transform: uppercase;
 }
 .main-header__title {
     margin: -20px 10px 0 0;
@@ -14,7 +18,7 @@
     font-family: "Indie Flower", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: 130px;
+    font-size: 8.125rem;
     color: #FFB254;
     text-shadow: 1px 1px #7d5e1a;    
 }
@@ -25,7 +29,7 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 15px;
+    font-size: 0.93rem;
     color: #FFC13D;
     text-shadow: 0.5px 0.5px rgba(125, 94, 26, 0.3);
 }
@@ -36,7 +40,7 @@
     text-align: center;
     width: 100%;
     background-color: #fffce1;
-    border-radius: 7px;
+    border-radius: 0.43rem;
 }
 .main-navigation__list-of-years {
     margin-top: 30px;
@@ -45,7 +49,7 @@
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .main-navigation__year {
     display: inline;
@@ -71,7 +75,7 @@
 /*AD*/
 .ad__banner {
     text-align: center;
-    font-size: 10px;
+    font-size: 0.625rem;
     text-decoration: line-through;
 }
 
@@ -89,7 +93,7 @@
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
-    font-size: 25px;
+    font-size: 1.5625rem;
     color: #FFB254;
     text-shadow: 1px 1px #7d5e1a;
     text-transform: uppercase;
@@ -100,7 +104,7 @@
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: #FFB254;
     text-shadow: 1px 1px #7d5e1a;
 }
@@ -149,4 +153,5 @@
 }
 .footer__info {
     text-transform: uppercase;
+    text-align: center;
 }
