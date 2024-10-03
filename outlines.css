@@ -172,25 +172,31 @@
 
 .random-table {
     height: 300px;
+    width: 100%;
+}
+.row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
-.row {
-    display: contents;
-}
-.row div {
+.row td {
     border: 1px solid black;
     font-size: 30px;
     text-align: center;
 }
-.row:first-child div, .row div:first-child {
+.row:first-child td, .row td:first-child {
     font-weight: bold;
 }
-.row:nth-child(2n+1) div {
+.row:nth-child(2n+1) td {
     background: brown;
 }
-.row:nth-child(2n+2) div {
+.row:nth-child(2n+2) td {
     background: red ;
+}
+
+@media all and (max-width: 250px) {
+    .row td:last-child {
+        display: none;
+    }
 }
 
 /*FOOTER*/
