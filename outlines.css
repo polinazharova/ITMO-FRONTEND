@@ -190,7 +190,7 @@
     background: brown;
 }
 .row:nth-child(2n+2) td {
-    background: red ;
+    background: red;
 }
 
 @media all and (max-width: 300px) {
