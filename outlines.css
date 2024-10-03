@@ -172,11 +172,11 @@
 
 .random-table {
     height: 300px;
-    width: 100%;
-}
-.row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+}
+.row, .aaa{
+    display: contents;
 }
 .row td {
     border: 1px solid black;
@@ -193,9 +193,12 @@
     background: red ;
 }
 
-@media all and (max-width: 250px) {
+@media all and (max-width: 300px) {
     .row td:last-child {
         display: none;
+    }
+    .random-table {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
