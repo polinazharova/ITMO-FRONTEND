@@ -1,10 +1,10 @@
 (() => {
     const loadStart = performance.now();
     
-    const currentLocation = document.location.pathname;
+    const currentLocation = document.location.href;
      const menuLinks = document.querySelectorAll('.main-navigation__year-link');
      menuLinks.forEach(link => {
-        if (link.pathname === currentLocation) {
+        if (link.href === currentLocation) {
             link.classList.add('main-navigation__year-link_active');
         }
     });
