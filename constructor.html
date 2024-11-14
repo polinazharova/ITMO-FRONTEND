@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>TuneTally Ratings</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="music, albums, rating">
+        <meta name="description" content="We rate music albums here">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="outlines.css">
+        <script async src="scripts/script_for_constructor.js"></script>
+    </head>
+    <body class="body">
+        <header class="main-header">
+            <h1 class="main-header__title">ATLT</h1>
+        </header>
+        <main>
+            <form action="" id="сonstruct-form">
+                <label for="listento" class="label">Введите название альбома или песни:</label>
+                <input type="text" name="listento" id="listento" placeholder="Camila Cabello - Camila">
+                <button type="submit" id="btn">Принять</button>
+                <button type="reset" id="btn">RESET</button>
+            </form>
+            <span class="data" id="all">Всего: 0</span>
+            <span class="data" id="listened">Прослушано: 0</span>
+            <div id="cards">
+            </div>
+        </main>
+    </body>
+</html>
