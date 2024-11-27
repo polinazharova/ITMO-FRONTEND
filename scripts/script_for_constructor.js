@@ -1,36 +1,71 @@
-form = document.getElementById('сonstruct-form');
-checkboxes = document.getElementsByClassName('check-done');
+'use strict';
 
-musicNamesStorage = [];
+const form = document.getElementById('сonstruct-form');
 
-count = 0;
-listened = 0;
+let count = 0;
+let listened = 0;
+
+
+if (localStorage.length > 0) {
+
+    while (count < localStorage.getItem('count')) {
+
+        cardCreation(localStorage.getItem('album-song-name' + count));
+
+        let checkbox = document.getElementById('checkbox' + (count - 1));
+        let isChecked = localStorage.getItem(checkbox.id) === 'true';
+        checkbox.checked = isChecked;
+
+        if (isChecked) {
+            listened++;
+        }
+    }
+
+    document.getElementById('all').textContent = `Всего: ${count}`;
+    document.getElementById('listened').textContent = `Прослушано: ${listened}`;
+}
 
 function cardCreation(text) {
-    cards = document.getElementById('cards');
+    let cards = document.getElementById('cards');
+    let card = document.getElementById('tmpl_card').content.cloneNode(true);
 
-    card = document.createElement('div');
-    card.className = 'card';
+    let checkbox = card.querySelector('.check-done');
+    checkbox.setAttribute('id', 'checkbox' + count);
 
-    radio_done = document.createElement('input');
-    radio_done.className = 'check-done';
-    radio_done.setAttribute('type', 'checkbox');
-    radio_done.setAttribute('name', 'done-not');
-    radio_done.setAttribute('id', 'done' + count);
-    card.appendChild(radio_done);
-
-
-    albumSongName = document.createElement('span');
-    albumSongName.className = 'album-song-name';
+    let albumSongName = card.querySelector('.album-song-name');
+    albumSongName.setAttribute('id', 'album-song-name' + count);
     albumSongName.textContent = text;
-    card.appendChild(albumSongName);
+
+    let buttonDelete = card.querySelector('.buttonDelete');
+    buttonDelete.setAttribute('id', 'buttonDelete' + count);
 
     cards.prepend(card);
 
     count++;
 
-    radioListener(radio_done);
+    radioListener(checkbox);
+    buttonDeleteListener(buttonDelete);
 }
+
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    event.stopPropagation(); 
+    
+    const formData = new FormData(form);
+    event.target.reset();
+
+    if (formData.get('listento').trim() === '') {
+        alert('Некорректный ввод!');
+        return;
+    }
+
+    cardCreation(formData.get('listento'));
+
+    document.getElementById('all').textContent = `Всего: ${count}`;
+    
+    localStorage.setItem('album-song-name' + (count - 1), formData.get('listento')); 
+    localStorage.setItem('count', count); 
+});
 
 function radioListener(radio_done) {
     radio_done.addEventListener('change', (event) => {
@@ -48,41 +83,11 @@ function radioListener(radio_done) {
     });
 }
 
-if (localStorage.length > 0) {
+function buttonDeleteListener(button) {
 
-    if (localStorage.getItem('musicNames')) {
-        musicNamesStorage = JSON.parse(localStorage.getItem('musicNames'));
-    }
-
-    for (i = 0; i < musicNamesStorage.length; i++) {
-        cardCreation(musicNamesStorage[i]);
-    }
-
-    document.getElementById('all').textContent = `Всего: ${count}`;
-
-    Array.from(checkboxes).forEach(checkbox => {
-        isChecked = localStorage.getItem(checkbox.id) === 'true';
-
-        checkbox.checked = isChecked;
-
-        if (isChecked) {
-            listened++;
-        }
+    button.addEventListener('click', (event) => {
+        let card = document.getElementById('card' + event.target.id);
+        musicNamesStorage.remove(event.target.id);
+        localStorage.removeItem('checkbox' +  event.target.id);
     })
-
-    document.getElementById('listened').textContent = `Прослушано: ${listened}`;
 }
-
-form.addEventListener('submit', event => {
-    event.preventDefault();
-    event.stopPropagation(); 
-    
-    const formData = new FormData(form);
-
-    cardCreation(formData.get('listento'));
-
-    document.getElementById('all').textContent = `Всего: ${count}`;
-
-    musicNamesStorage.push(formData.get('listento'));
-    localStorage['musicNames'] = JSON.stringify(musicNamesStorage);
-});

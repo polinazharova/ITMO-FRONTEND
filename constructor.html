@@ -21,7 +21,7 @@
         <main>
             <form action="" id="сonstruct-form">
                 <label for="listento" class="label">Введите название альбома или песни:</label>
-                <input type="text" name="listento" id="listento" placeholder="Camila Cabello - Camila">
+                <input type="text" name="listento" id="listento" placeholder="Camila Cabello - Camila" required>
                 <button type="submit" id="btn">Принять</button>
                 <button type="reset" id="btn">RESET</button>
             </form>
@@ -29,6 +29,14 @@
             <span class="data" id="listened">Прослушано: 0</span>
             <div id="cards">
             </div>
+
+            <template id="tmpl_card">
+                <div class="card">
+                    <input type="checkbox" name="done-not" class="check-done">
+                    <span class="album-song-name"></span>
+                    <button type="button" class="buttonDelete">X</button>
+                </div>
+            </template>
         </main>
     </body>
 </html>
