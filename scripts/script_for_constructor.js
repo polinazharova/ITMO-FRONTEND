@@ -36,15 +36,11 @@ function cardCreation(text) {
     albumSongName.setAttribute('id', 'album-song-name' + count);
     albumSongName.textContent = text;
 
-    let buttonDelete = card.querySelector('.buttonDelete');
-    buttonDelete.setAttribute('id', 'buttonDelete' + count);
-
     cards.prepend(card);
 
     count++;
 
     radioListener(checkbox);
-    buttonDeleteListener(buttonDelete);
 }
 
 form.addEventListener('submit', event => {
@@ -81,13 +77,4 @@ function radioListener(radio_done) {
         
         localStorage.setItem(event.target.id, event.target.checked); 
     });
-}
-
-function buttonDeleteListener(button) {
-
-    button.addEventListener('click', (event) => {
-        let card = document.getElementById('card' + event.target.id);
-        musicNamesStorage.remove(event.target.id);
-        localStorage.removeItem('checkbox' +  event.target.id);
-    })
 }
