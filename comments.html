@@ -20,11 +20,17 @@
         </header>
         <main>
             <img class="main__preloader" src="assets/Dancingkitty.gif" alt="preload gif">
-            <template id="tmlp_comment">
-                <div class="comment">
-                    <h4 class="comment__author-name"></h4>
-                    <p class="comment__text"></p>
-                </div>
+            <div class="comments">
+                <template id="tmpl_comment">
+                    <div class="comment">
+                        <h4 class="comment__author-name album-cover-name__caption album-cover-name_strong-text"></h4>
+                        <p class="album-info__aside-info comment__text"></p>
+                    </div>
+                </template>
+            </div>
+
+            <template id="tmpl_error">
+                <p class="error albums__list albums">⚠ Что-то пошло не так!</p>
             </template>
         </main>
     </body>

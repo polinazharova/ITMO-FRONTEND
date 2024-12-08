@@ -2,7 +2,7 @@
 
 async function getComments() {
     try {
-        let response = await fetch('https://jsonplaceholder.typicode.com/comments');
+        let response = await fetch('https://jsonplaceholder.typicode.com/comments/');
         if (!response.ok) {
             throw new Error('Something went wrong!');
         }
@@ -14,28 +14,49 @@ async function getComments() {
 }
 
 function showComments(json) {
-    const maxId = Math.random() * (400 - 0) + 0;
-    for (let i = maxId; i <= maxId + 100; i++) {
-        let comment = document.getElementById('tmlp_comment').content.cloneNode(true);
+    const maxId = Math.floor(Math.random() * json.length);
+    for (let i = maxId; i <= maxId + 100 && i < json.length; i++) {
+        let comment = document.getElementById('tmpl_comment').content.cloneNode(true);
 
         let authorName = comment.querySelector('.comment__author-name');
         authorName.textContent = json[i]['name'];
 
         let commentText = comment.querySelector('.comment__text');
         commentText.textContent = json[i]['body'];
+
+        document.getElementsByTagName('main')[0].append(comment);
     }
 }
 
 window.addEventListener('load', async () => {
-    let json = await getComments();
+    for (let i = 0 ; i < 5; i++) {
+        let comment = document.getElementById('tmpl_comment').content.cloneNode(true);
+
+        let authorName = comment.querySelector('.comment__author-name');
+        authorName.textContent = 'Идет загрузка комментариев';
+
+        let commentText = comment.querySelector('.comment__text');
+
+        commentText.textContent = 'Тестовая версия, на случай, если как всегда не загрузится)))';
+
+        document.getElementsByTagName('main')[0].append(comment);
+    }
+    const json = await getComments();
+
+    let removeComments = document.querySelectorAll('.comment');
+
+    Array.from(removeComments).forEach(element => {
+        element.remove();
+    });
+    
+    const preloader = document.getElementsByClassName('main__preloader')[0];
+    preloader.style.display = 'none';  
+
     if (json) {
         console.log(json);
         showComments(json);
+    } else {
+        let error = document.getElementById('tmpl_error').content.cloneNode(true);
+        document.getElementsByTagName('main')[0].append(error);
     }
-    else {
-        alert('smth went wrong');
-    }
-
-    let preloader = document.getElementsByClassName('main__preloader')[0];
-    preloader.style.display = 'none';  
 })

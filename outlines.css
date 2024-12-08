@@ -162,7 +162,7 @@
     width: 100px;
     border: 3px dotted #7d5e1a;
 }
-.album-info__aside-info {
+.album-info__aside-info, .album-info__aside-info.comment__text {
     margin: -10px 0 10px 0;
     font-family: "Maven Pro", sans-serif;
     font-optical-sizing: auto;
@@ -201,7 +201,6 @@
 
 }
 
-
 .data {
     display: block;
     text-align: center;
@@ -220,4 +219,32 @@
     border: #fffce1 1px solid;
     display: flex;
     justify-content: center;
+}
+
+
+
+.main__preloader {
+    display: flex;
+    justify-self: center;
+    mix-blend-mode: multiply;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.comment {
+    justify-self: center;
+    width: 50%;
+    margin-bottom: 10px;
+    overflow-wrap: break-word;
+    border: 3px dotted #7d5e1a;
+}
+
+.comment__author-name, .comment__text {
+    text-align: center;
+    margin: 0 0 10px 0;
+    color: #ffa73b;
 }
