@@ -97,6 +97,7 @@
     text-align: center;
 }
 .albums__list {
+    margin-top: 0;
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
     font-weight: 800;
@@ -152,6 +153,15 @@
 
 .album-cover-name__caption {
     text-shadow: 0.5px 0.5px #fff3db;
+}
+
+.album-cover-name__link {
+    text-decoration: none;
+    color: inherit;
+}
+.album-cover-name .album-cover-name__caption:hover {
+    color: #7d5e1a;
+    text-shadow: none;
 }
 
 .album-cover-name_strong-text {
@@ -221,8 +231,6 @@
     justify-content: center;
 }
 
-
-
 .main__preloader {
     display: flex;
     justify-self: center;
@@ -232,7 +240,6 @@
 .comments {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 }
 
 .comment {
@@ -247,4 +254,60 @@
     text-align: center;
     margin: 0 0 10px 0;
     color: #ffa73b;
+}
+
+.hits-of-month {
+    margin: 16px 0 0 0;
+}
+
+.jc-slider {
+    padding-left: 0;
+    margin: 0;
+}
+
+.jc-animation {
+    list-style-type: none;
+}
+
+.jc-animation__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+
+.jc-animation__item:hover .jc-animation__cover {
+    width: 130px;
+    border: #fffce1 5px solid;
+    border-radius: 7px; 
+    cursor: pointer;
+}
+
+.jc-animation__cover {
+    width: 100px;
+}
+
+.jc-animation__caption {
+    margin-top: 0;
+}
+
+.album-info-c {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.album-info-c__alb-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.album-info-c__aside-info {
+    width: 300px;
+}
+
+.album-info-c__picture {
+    width: 300px;
 }

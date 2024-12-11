@@ -53,7 +53,6 @@ window.addEventListener('load', async () => {
     preloader.style.display = 'none';  
 
     if (json) {
-        console.log(json);
         showComments(json);
     } else {
         let error = document.getElementById('tmpl_error').content.cloneNode(true);

@@ -12,7 +12,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="outlines.css">
-        <script async src="scripts/script.js"></script>
+        <!-- animate CSS stylesheet library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+        <!-- jQuery library (served from Google) -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <!-- jcSlider Javascript file -->
+        <script src="node_modules/jcslider/jquery.jcslider.min.js"></script>
+        <script src="scripts/script.js"></script>
     </head>
     <body class="body">
         <header class="main-header">
@@ -28,9 +34,21 @@
                     <li class="main-navigation__year"><a class="main-navigation__year-link" href="index.html">2024</a></li>
                     <li class="main-navigation__year"><a class="main-navigation__year-link" href="2023.html">2023</a></li>
                     <li class="main-navigation__year"><a class="main-navigation__year-link" href="2022.html">2022</a></li>
+                    <li class="main-navigation__year"><a class="main-navigation__year-link" href="constructor.html">КОНСТРУКТОР</a></li>
                 </ul>    
             </nav>
             <div class="ad"><aside class="ad__banner">Здесь могла быть ваша реклама.</aside></div>
+            <p class="hits-of-month albums albums__list">Хиты месяца</p>
+            <ul class="jc-slider">
+                <template id="jc-slider__li-tmpl">
+                    <li class="jc-animation">
+                        <figure class="jc-animation__item">
+                            <img class="jc-animation__cover" src="" alt="an album cover">
+                            <figcaption class="jc-animation__caption album-info__aside-info"></figcaption>
+                        </figure>
+                    </li>
+                </template>
+            </ul>
             <section class="albums">
                 <h3 class="albums__list">Список альбомов:</h3>
                 <p class="albums__chosen-year">Альбомы <strong>2023</strong> года</p>
